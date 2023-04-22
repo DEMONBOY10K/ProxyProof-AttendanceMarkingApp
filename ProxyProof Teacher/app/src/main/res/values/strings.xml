@@ -120,6 +120,7 @@
     <string name="rules">"Instructions:\n  1. Teacher turns on their phone's hotspot. Student connects to hotspot. \n 2. Teacher opens app and taps \"Receive Attendance\" button. Student taps \"Send Attendance\" button and submits their attendance. \n 3. Teacher reviews and confirms attendance. Teacher exports attendance from \"Export Attendance\" page by selecting necessary details. "</string>
 
     <string-array name="Department">
+        <item>First Year</item>
         <item>MECH</item>
         <item>CSE</item>
         <item>MSME</item>
@@ -129,14 +130,16 @@
         <item>CIVIL</item>
     </string-array>
     <string-array name="Sem">
-        <item>1</item>
-        <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
         <item>7</item>
         <item>8</item>
+    </string-array>
+    <string-array name="FirstYearSem">
+        <item>1</item>
+        <item>2</item>
     </string-array>
     <string-array name="TimeSlot">
         <item>9am-10am</item>
@@ -147,8 +150,41 @@
         <item>2pm-3pm</item>
         <item>3pm-4pm</item>
         <item>4pm-5pm</item>
+        <item>9am-12am</item>
+        <item>2pm-5pm</item>
     </string-array>
 
+    <string-array name="FirstYearSec">
+        <item>Sec A</item>
+        <item>Sec B</item>
+        <item>Sec C</item>
+        <item>Sec D</item>
+        <item>Sec E</item>
+        <item>Sec F</item>
+        <item>Sec G</item>
+        <item>Sec H</item>
+        <item>Sec I</item>
+        <item>Sec J</item>
+    </string-array>
+    <string-array name="FirstYearSub">
+        <item>Engg Graph</item>
+        <item>CPP</item>
+        <item>Communication</item>
+        <item>Physics</item>
+        <item>Civil</item>
+        <item>M2</item>
+        <item>Engg Chem</item>
+        <item>Environmental</item>
+        <item>Solid Mech</item>
+        <item>M1</item>
+        <item>BEEE</item>
+        <item>Basic Mech</item>
+        <item>BEEE Lab</item>
+        <item>Cpp Lab</item>
+        <item>Workshop</item>
+        <item>Chem Lab</item>
+        <item>Phy Lab</item>
+    </string-array>
     <string-array name="MechSection">
         <item>Mech1</item>
         <item>Mech2</item>

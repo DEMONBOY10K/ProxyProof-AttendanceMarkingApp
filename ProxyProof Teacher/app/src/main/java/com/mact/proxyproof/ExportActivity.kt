@@ -6,9 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.os.*
-import android.text.TextUtils
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
@@ -94,11 +92,20 @@ class ExportActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 department = spDept.selectedItem.toString()
                 Log.d("department", department!!)
-                val sem =
-                    ArrayAdapter.createFromResource(this@ExportActivity, R.array.Sem,R.layout.dropdown_menu)
-                sem.setDropDownViewResource(R.layout.dropdown_menu)
-                currentSemtAdap = sem
-                spSemester.adapter = sem
+                if(department =="First Year"){
+                    val sem =
+                        ArrayAdapter.createFromResource(this@ExportActivity, R.array.FirstYearSem,R.layout.dropdown_menu)
+                    sem.setDropDownViewResource(R.layout.dropdown_menu)
+                    currentSemtAdap = sem
+                    spSemester.adapter = sem
+                }else{
+                    val sem =
+                        ArrayAdapter.createFromResource(this@ExportActivity, R.array.Sem,R.layout.dropdown_menu)
+                    sem.setDropDownViewResource(R.layout.dropdown_menu)
+                    currentSemtAdap = sem
+                    spSemester.adapter = sem
+                }
+
             }
 
         }
@@ -110,64 +117,93 @@ class ExportActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 semester = spSemester.selectedItem.toString()
                 Log.d("semester", semester!!)
+
                 when (department){
-                        "MECH" ->{
-                            setMechAdapter(semester.toString().toInt())
-                            val classroom =
-                                ArrayAdapter.createFromResource(this@ExportActivity, R.array.MechSection,R.layout.dropdown_menu)
-                            classroom.setDropDownViewResource(R.layout.dropdown_menu)
-                            spClass.adapter = classroom
-                            currentSecAdap = classroom
+                    "First Year" ->{
+                        when (semester) {
+                            "1", "2" -> {
+                                val classroom =
+                                    ArrayAdapter.createFromResource(
+                                        this@ExportActivity,
+                                        R.array.FirstYearSec,
+                                        R.layout.dropdown_menu
+                                    )
+                                classroom.setDropDownViewResource(R.layout.dropdown_menu)
+                                spClass.adapter = classroom
+                                department = "FirstYear"
+//                        spDept.isEnabled = false
+                                val subject =
+                                    ArrayAdapter.createFromResource(
+                                        this@ExportActivity,
+                                        R.array.FirstYearSub,
+                                        R.layout.dropdown_menu
+                                    )
+                                subject.setDropDownViewResource(R.layout.dropdown_menu)
+                                spSubject.adapter = subject
+                            }
                         }
-                        "CSE"->{
-                            setCseAdapter(semester.toString().toInt())
-                            val classroom =
-                                ArrayAdapter.createFromResource(this@ExportActivity, R.array.CseSection,R.layout.dropdown_menu)
-                            classroom.setDropDownViewResource(R.layout.dropdown_menu)
-                            spClass.adapter = classroom
-                            currentSecAdap = classroom
-                        }
-                        "MSME"->{
-                            setMsmeAdapter(semester.toString().toInt())
-                            val classroom =
-                                ArrayAdapter.createFromResource(this@ExportActivity, R.array.MsmeSection,R.layout.dropdown_menu)
-                            classroom.setDropDownViewResource(R.layout.dropdown_menu)
-                            spClass.adapter = classroom
-                            currentSecAdap = classroom
-                        }
-                        "ECE"->{
-                            setEceAdapter(semester.toString().toInt())
-                            val classroom =
-                                ArrayAdapter.createFromResource(this@ExportActivity, R.array.EceSection,R.layout.dropdown_menu)
-                            classroom.setDropDownViewResource(R.layout.dropdown_menu)
-                            spClass.adapter = classroom
-                            currentSecAdap = classroom
-                        }
-                        "EX"->{
-                            setExAdapter(semester.toString().toInt())
-                            val classroom =
-                                ArrayAdapter.createFromResource(this@ExportActivity, R.array.ExSection,R.layout.dropdown_menu)
-                            classroom.setDropDownViewResource(R.layout.dropdown_menu)
-                            spClass.adapter = classroom
-                            currentSecAdap = classroom
-                        }
-                        "CHEM"->{
-                            setChemAdapter(semester.toString().toInt())
-                            val classroom =
-                                ArrayAdapter.createFromResource(this@ExportActivity, R.array.ChemSection,R.layout.dropdown_menu)
-                            classroom.setDropDownViewResource(R.layout.dropdown_menu)
-                            spClass.adapter = classroom
-                            currentSecAdap = classroom
-                        }
-                        "CIVIL"->{
-                            setCivilAdapter(semester.toString().toInt())
-                            val classroom =
-                                ArrayAdapter.createFromResource(this@ExportActivity, R.array.CivilSection,R.layout.dropdown_menu)
-                            classroom.setDropDownViewResource(R.layout.dropdown_menu)
-                            spClass.adapter = classroom
-                            currentSecAdap = classroom
-                        }
+                    }
+                    "MECH" ->{
+                        setMechAdapter(semester.toString().toInt())
+                        val classroom =
+                            ArrayAdapter.createFromResource(this@ExportActivity, R.array.MechSection,R.layout.dropdown_menu)
+                        classroom.setDropDownViewResource(R.layout.dropdown_menu)
+                        spClass.adapter = classroom
+                        currentSecAdap = classroom
+                    }
+                    "CSE"->{
+                        setCseAdapter(semester.toString().toInt())
+                        val classroom =
+                            ArrayAdapter.createFromResource(this@ExportActivity, R.array.CseSection,R.layout.dropdown_menu)
+                        classroom.setDropDownViewResource(R.layout.dropdown_menu)
+                        spClass.adapter = classroom
+                        currentSecAdap = classroom
+                    }
+                    "MSME"->{
+                        setMsmeAdapter(semester.toString().toInt())
+                        val classroom =
+                            ArrayAdapter.createFromResource(this@ExportActivity, R.array.MsmeSection,R.layout.dropdown_menu)
+                        classroom.setDropDownViewResource(R.layout.dropdown_menu)
+                        spClass.adapter = classroom
+                        currentSecAdap = classroom
+                    }
+                    "ECE"->{
+                        setEceAdapter(semester.toString().toInt())
+                        val classroom =
+                            ArrayAdapter.createFromResource(this@ExportActivity, R.array.EceSection,R.layout.dropdown_menu)
+                        classroom.setDropDownViewResource(R.layout.dropdown_menu)
+                        spClass.adapter = classroom
+                        currentSecAdap = classroom
+                    }
+                    "EX"->{
+                        setExAdapter(semester.toString().toInt())
+                        val classroom =
+                            ArrayAdapter.createFromResource(this@ExportActivity, R.array.ExSection,R.layout.dropdown_menu)
+                        classroom.setDropDownViewResource(R.layout.dropdown_menu)
+                        spClass.adapter = classroom
+                        currentSecAdap = classroom
+                    }
+                    "CHEM"->{
+                        setChemAdapter(semester.toString().toInt())
+                        val classroom =
+                            ArrayAdapter.createFromResource(this@ExportActivity, R.array.ChemSection,R.layout.dropdown_menu)
+                        classroom.setDropDownViewResource(R.layout.dropdown_menu)
+                        spClass.adapter = classroom
+                        currentSecAdap = classroom
+                    }
+                    "CIVIL"->{
+                        setCivilAdapter(semester.toString().toInt())
+                        val classroom =
+                            ArrayAdapter.createFromResource(this@ExportActivity, R.array.CivilSection,R.layout.dropdown_menu)
+                        classroom.setDropDownViewResource(R.layout.dropdown_menu)
+                        spClass.adapter = classroom
+                        currentSecAdap = classroom
+                    }
                 }
+
+
+
+
 
             }
 
@@ -297,21 +333,6 @@ class ExportActivity : AppCompatActivity() {
             finish()
         }
 
-        btnAddDepart.setOnClickListener {
-            showNewInputDialog(spDept,"Department")
-        }
-        btnAddSem.setOnClickListener {
-            showNewInputDialog(spSemester,"Semester")
-        }
-        btnAddSec.setOnClickListener {
-            showNewInputDialog(spClass,"Section")
-        }
-        btnAddSub.setOnClickListener {
-            showNewInputDialog(spSubject,"Subject")
-        }
-        btnAddTime.setOnClickListener {
-            showNewInputDialog(spTimeSlot,"TimeSlot")
-        }
     }
     private fun beginExport(){
         btnExportXLS.isEnabled = false
@@ -340,44 +361,6 @@ class ExportActivity : AppCompatActivity() {
             dialog.dismiss()
         }
         builder.create().show()
-    }
-    private fun showNewInputDialog(spinner: Spinner,Title: String) {
-        // Inflate the dialog_input.xml layout
-        val view: View = LayoutInflater.from(this).inflate(R.layout.exportdialog_input, null)
-
-        // Get the EditText view from the layout
-        val editText = view.findViewById<EditText>(R.id.edit_text_input)
-
-        // Create the AlertDialog
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(Title)
-        builder.setView(view)
-        builder.setCancelable(false)
-        builder.setPositiveButton("Confirm", null)
-        builder.setNegativeButton("Cancel", null)
-
-        // Show the AlertDialog
-        val alertDialog = builder.create()
-        alertDialog.show()
-
-        // Set a click listener on the confirm button to check if the input field is empty
-        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-            // Check if the input field is empty
-            if (TextUtils.isEmpty(editText.text)) {
-                editText.error = "Input field can't be empty!"
-            } else {
-                // Input field is not empty, dismiss the dialog
-                alertDialog.dismiss()
-                // Do something with the input value
-                val input = editText.text.toString()
-                Log.d("Input",input)
-                // ...
-                val inputArrayList = arrayListOf(input)
-                val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, inputArrayList)
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spinner.adapter =adapter
-            }
-        }
     }
     private fun getTimeRange(timeStamp :String): String {
         val startTimeStrings = arrayOf("09.00", "10.11", "11.11", "12.11", "02.11", "03.11", "04.11")
