@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="weekdayList">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </array>
+    <array name="weekdayListShort">
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+        <item>Sun</item>
+    </array>
+    <string-array name="prefThemeEntries">
+        <item>System Default</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="prefThemeEntriesValues">
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="settings_fabActionEntries">
+        <item>Close app</item>
+        <item>Open map</item>
+        <item>Open calendar</item>
+    </string-array>
+    <string-array name="settings_fabActionEntriesValues">
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="settings_campusMapPickerFileTypeList">
+        <item>Image (JPG, PNG)</item>
+        <item>PDF</item>
+    </string-array>
+</resources>

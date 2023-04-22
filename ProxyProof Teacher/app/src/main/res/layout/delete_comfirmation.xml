@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  a:layout_width="match_parent"
+  a:layout_height="wrap_content"
+  a:orientation="vertical"
+  a:theme="@style/Theme.Material"
+  a:background="@color/background">
+
+  <Button
+    a:id="@+id/delete_delete"
+    a:layout_width="match_parent"
+    a:layout_height="wrap_content"
+    a:layout_above="@id/delete_cancel"
+    a:text="Delete"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    a:id="@+id/delete_cancel"
+    a:layout_width="match_parent"
+    a:layout_height="wrap_content"
+    a:layout_alignParentBottom="true"
+    a:text="Cancel"
+    tools:ignore="HardcodedText" />
+
+  <ScrollView
+    a:id="@+id/delete_scroll_view"
+    a:layout_width="match_parent"
+    a:layout_height="wrap_content"
+    a:layout_alignParentTop="true"
+    a:layout_above="@id/delete_delete"
+    a:gravity="top">
+
+    <TextView
+      a:id="@+id/delete_list"
+      a:layout_width="match_parent"
+      a:layout_height="wrap_content"
+      a:padding="2dp"/>
+
+  </ScrollView>
+
+</RelativeLayout>

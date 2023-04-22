@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  a:layout_width="match_parent"
+  a:layout_height="match_parent"
+  a:orientation="vertical"
+  a:theme="@style/Theme.Material"
+  a:background="@color/background">
+
+  <EditText
+    a:id="@+id/new_name"
+    a:layout_width="match_parent"
+    a:layout_height="wrap_content"
+    a:layout_alignParentTop="true"
+    a:hint="Enter new name"
+    tools:ignore="HardcodedText"
+    a:inputType="text"
+    tools:targetApi="cupcake" />
+
+  <Button
+    a:id="@+id/rename_cancel"
+    a:layout_width="wrap_content"
+    a:layout_height="wrap_content"
+    a:layout_below="@id/new_name"
+    a:layout_toLeftOf="@id/rename_rename"
+    a:text="Cancel"
+    tools:ignore="HardcodedText,RtlHardcoded"
+     />
+
+  <Button
+    a:id="@+id/rename_rename"
+    a:layout_width="wrap_content"
+    a:layout_height="wrap_content"
+    a:layout_below="@id/new_name"
+    a:layout_alignParentRight="true"
+    a:text="Rename"
+    tools:ignore="HardcodedText,RtlHardcoded"
+   />
+
+</RelativeLayout>

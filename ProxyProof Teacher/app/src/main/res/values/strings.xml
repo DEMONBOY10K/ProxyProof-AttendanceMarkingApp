@@ -1,0 +1,737 @@
+<resources>
+    <string name="app_name">ProxyProof Teacher</string>
+
+    <string name="firebase_db_location">https://proxyproof-10000-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="blink_detect">Eye Blink Detected\nCapturing Image.</string>
+    <string name="slider1">1. Make your Pose for Selfie</string>
+    <string name="slider2">2. Blink once to click your picture</string>
+    <string name="slider3">3. Picture gets saved automatically to gallery</string>
+    <string name="permission_message">You must grant permission to access camera to run this application.</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="permission_warning">All permissions are required.</string>
+    <string name="search_menu_title">Search</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="take_photo">Blink your eyes to capture photo</string>
+    <string name="save_to_gallery">Save to Gallery</string>
+
+
+
+    //FILE SHARE
+    <string name="nearby_hosts">Send to</string>
+    <string name="choose_file">Choose files to send</string>
+    <string name="choose_ok">OK</string>
+    <string name="receive_button">Receive\nAttendance</string>
+    <string name="receive_cancel_button">Stop\nReceiving</string>
+    <string name="choose_storage_directory">Choose save directory</string>
+    <string name="choose_send_directory">Choose send directory</string>
+    <string name="start_receive_service">Start receive service</string>
+    <string name="transfer_service_is_already_running">Send service is already running</string>
+    <string name="cancel">Cancel</string>
+    <string name="channel_transfer_state">Transfer Status</string>
+    <string name="notification_sending">Sending</string>
+    <string name="notification_receiving">Receiving</string>
+    <string name="export_button">Export Attendance</string>
+    <string name="notification_starting">Waiting for data</string>
+    <string name="notification_finishing">Finishing</string>
+    <string name="transfer_success">Transfer Success</string>
+    <string name="transfer_failed">Transfer Failed</string>
+    <string name="channel_transfer_result">Transfer Result</string>
+    <string name="send_button">Mark\nAttendance</string>
+    <string name="send_cancel_button">Stop sending</string>
+    <string name="buffer_indicator">Buffer: %s/%s</string>
+
+
+
+
+    //Huawei Face
+    <string name="liveness">Liveness</string>
+    <string name="liveness_description">Detects if a person on camera is alive</string>
+    <string name="face_capture">FaceCapture</string>
+    <string name="face_capture_description">Automatically captures face photo</string>
+    <string name="match_faces_request">MatchFacesRequest</string>
+    <string name="match_faces_request_description">Checks the likelihood that two faces belong to the same person</string>
+    <string name="ln_camera_switch">Liveness camera switch</string>
+    <string name="ln_camera_switch_description">Enables front / back camera switch</string>
+    <string name="ln_attempts_count">Limit Liveness attempts count</string>
+    <string name="ln_attempts_count_description">Liveness is limited to the number of retries</string>
+    <string name="ln_disable_notification">Disable Liveness NotificationTextView animation</string>
+    <string name="ln_disable_notification_description">Disables blinking NotificationTextView animation for Liveness.</string>
+    <string name="fc_camera_position">Face Capture camera position</string>
+    <string name="fc_camera_position_description">Changes default camera position to back</string>
+    <string name="fc_disable_notification">Disable FaceCapture NotificationTextView animation</string>
+    <string name="fc_disable_notification_description">Disables blinking Notification TextView animation for FaceCapture</string>
+    <string name="hide_close_button">Hide close button</string>
+    <string name="hide_close_button_description">"Hide close button using default UI"</string>
+    <string name="hide_flash_button">Hide flash button</string>
+    <string name="hide_flash_button_description">"Hide flash button using default UI"</string>
+    <string name="hide_notification_text">Hide notification text view</string>
+    <string name="hide_notification_text_description">Hide notification text view using default UI fragment</string>
+    <string name="custom_notification_background">Custom notification background</string>
+    <string name="custom_notification_background_description">Custom notification background drawable based on Default UI</string>
+    <string name="change_buttons_color">Change buttons color</string>
+    <string name="change_buttons_color_description">Change buttons color using Default UI</string>
+    <string name="notification_text_position">Notification text view position</string>
+    <string name="notification_text_position_description">Change notification view position using default UI</string>
+    <string name="custom_flash_button">Custom flash button</string>
+    <string name="custom_flash_button_description">Change flash button using default UI</string>
+    <string name="change_swap_button">Change swap button</string>
+    <string name="change_swap_button_description">Change swap button drawable using default UI</string>
+    <string name="custom_ui_fragment">Basic custom UI fragment</string>
+    <string name="custom_ui_fragment_description">Custom UI with basic functionality</string>
+    <string name="ln_toolbar_appearance">Liveness toolbar appearance</string>
+    <string name="ln_toolbar_appearance_description">Usage example for toolbar</string>
+    <string name="customize_liveness_process">Customize liveness process</string>
+    <string name="customize_liveness_process_description">Customize liveness processing and retry screens</string>
+    <string name="custom_overlay">Custom Overlay</string>
+    <string name="custom_overlay_description">Change colors for overlay</string>
+    <string name="custom_localization">Custom localization</string>
+    <string name="custom_localization_description">Localization hook example</string>
+    <string name="network_interceptor">Network interceptor</string>
+    <string name="network_interceptor_description">Adds custom http fields to the outgoing requests.</string>
+    <string name="close">Close</string>
+    <string name="processing">Processing…</string>
+    <string name="both_images_compulsory">Having both images are compulsory</string>
+    <string name="similarity_null">Similarity: null</string>
+    <string name="similarity_result">Similarity: %1$s%%</string>
+    <string name="liveness_null">Liveness: null</string>
+    <string name="liveness_unknown">Liveness: unknown</string>
+    <string name="liveness_passed">Liveness: passed</string>
+
+    <string name="connect_tips">Note:\n  1.Before transferring files, the file receiving end needs to open the personal hotspot first, and let the file sending end connect to the hotspot.\n  2.The file receiving end starts monitoring first, and the file sending end sends the file</string>
+    <string name="start_listen">Start Monitoring</string>
+    <string name="instructions_face_verify">Instructions:\n1.Keep your face facing towards the screen &amp; try to keep it inside the circle.\n2.Wait until your face is verified.</string>
+
+<!--    STRINGS-->
+
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="rules">"Instructions:\n  1. Teacher turns on their phone's hotspot. Student connects to hotspot. \n 2. Teacher opens app and taps \"Receive Attendance\" button. Student taps \"Send Attendance\" button and submits their attendance. \n 3. Teacher reviews and confirms attendance. Teacher exports attendance from \"Export Attendance\" page by selecting necessary details. "</string>
+
+    <string-array name="Department">
+        <item>MECH</item>
+        <item>CSE</item>
+        <item>MSME</item>
+        <item>ECE</item>
+        <item>EX</item>
+        <item>CHEM</item>
+        <item>CIVIL</item>
+    </string-array>
+    <string-array name="Sem">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="TimeSlot">
+        <item>9am-10am</item>
+        <item>10am-11am</item>
+        <item>11am-12noon</item>
+        <item>12noon-1pm</item>
+<!--        <item>1-2</item>-->
+        <item>2pm-3pm</item>
+        <item>3pm-4pm</item>
+        <item>4pm-5pm</item>
+    </string-array>
+
+    <string-array name="MechSection">
+        <item>Mech1</item>
+        <item>Mech2</item>
+        <item>Mech3</item>
+    </string-array>
+    <string-array name="MechSem1">
+        <item>MechSubSem1</item>
+        <item>MechSub2</item>
+        <item>MechSub3</item>
+        <item>MechSub4</item>
+        <item>MechSub5</item>
+        <item>MechSub6</item>
+    </string-array>
+    <string-array name="MechSem2">
+        <item>MechSub1</item>
+        <item>MechSub2</item>
+        <item>MechSub3</item>
+        <item>MechSub4</item>
+        <item>MechSub5</item>
+        <item>MechSub6</item>
+    </string-array>
+    <string-array name="MechSem3">
+        <item>MechSub1</item>
+        <item>MechSub2</item>
+        <item>MechSub3</item>
+        <item>MechSub4</item>
+        <item>MechSub5</item>
+        <item>MechSub6</item>
+    </string-array>
+    <string-array name="MechSem4">
+        <item>MechSub1</item>
+        <item>MechSub2</item>
+        <item>MechSub3</item>
+        <item>MechSub4</item>
+        <item>MechSub5</item>
+        <item>MechSub6</item>
+    </string-array>
+    <string-array name="MechSem5">
+        <item>MechSub1</item>
+        <item>MechSub2</item>
+        <item>MechSub3</item>
+        <item>MechSub4</item>
+        <item>MechSub5</item>
+        <item>MechSub6</item>
+    </string-array>
+    <string-array name="MechSem6">
+        <item>MechSub1</item>
+        <item>MechSub2</item>
+        <item>MechSub3</item>
+        <item>MechSub4</item>
+        <item>MechSub5</item>
+        <item>MechSub6</item>
+    </string-array>
+    <string-array name="MechSem7">
+        <item>MechSub1</item>
+        <item>MechSub2</item>
+        <item>MechSub3</item>
+        <item>MechSub4</item>
+        <item>MechSub5</item>
+        <item>MechSub6</item>
+    </string-array>
+    <string-array name="MechSem8">
+        <item>MechSub1</item>
+        <item>MechSub2</item>
+        <item>MechSub3</item>
+        <item>MechSub4</item>
+        <item>MechSub5</item>
+        <item>MechSub6</item>
+    </string-array>
+
+    <string-array name="CseSection">
+        <item>Cse1</item>
+        <item>Cse2</item>
+        <item>Cse3</item>
+    </string-array>
+    <string-array name="CseSem1">
+        <item>CseSubSem1.1</item>
+        <item>CseSub2</item>
+        <item>CseSub3</item>
+        <item>CseSub4</item>
+        <item>CseSub5</item>
+        <item>CseSub6</item>
+    </string-array>
+    <string-array name="CseSem2">
+        <item>CseSubSem2.1</item>
+        <item>CseSub2</item>
+        <item>CseSub3</item>
+        <item>CseSub4</item>
+        <item>CseSub5</item>
+        <item>CseSub6</item>
+    </string-array>
+    <string-array name="CseSem3">
+        <item>CseSubSem3.1</item>
+        <item>CseSub2</item>
+        <item>CseSub3</item>
+        <item>CseSub4</item>
+        <item>CseSub5</item>
+        <item>CseSub6</item>
+    </string-array>
+    <string-array name="CseSem4">
+        <item>CseSubSem4.1</item>
+        <item>CseSub2</item>
+        <item>CseSub3</item>
+        <item>CseSub4</item>
+        <item>CseSub5</item>
+        <item>CseSub6</item>
+    </string-array>
+    <string-array name="CseSem5">
+        <item>CseSubSem5.1</item>
+        <item>CseSub2</item>
+        <item>CseSub3</item>
+        <item>CseSub4</item>
+        <item>CseSub5</item>
+        <item>CseSub6</item>
+    </string-array>
+    <string-array name="CseSem6">
+        <item>CseSubSem6.1</item>
+        <item>CseSub2</item>
+        <item>CseSub3</item>
+        <item>CseSub4</item>
+        <item>CseSub5</item>
+        <item>CseSub6</item>
+    </string-array>
+    <string-array name="CseSem7">
+        <item>CseSubSem7.1</item>
+        <item>CseSub2</item>
+        <item>CseSub3</item>
+        <item>CseSub4</item>
+        <item>CseSub5</item>
+        <item>CseSub6</item>
+    </string-array>
+    <string-array name="CseSem8">
+        <item>CseSubSem8.1</item>
+        <item>CseSub2</item>
+        <item>CseSub3</item>
+        <item>CseSub4</item>
+        <item>CseSub5</item>
+        <item>CseSub6</item>
+    </string-array>
+
+    <string-array name="MsmeSection">
+        <item>Msme1</item>
+        <item>Msme2</item>
+        <item>Msme3</item>
+    </string-array>
+    <string-array name="MsmeSem1">
+        <item>MsmeSubSem1</item>
+        <item>MsmeSub2</item>
+        <item>MsmeSub3</item>
+        <item>MsmeSub4</item>
+        <item>MsmeSub5</item>
+        <item>MsmeSub6</item>
+    </string-array>
+    <string-array name="MsmeSem2">
+        <item>MsmeSub1</item>
+        <item>MsmeSub2</item>
+        <item>MsmeSub3</item>
+        <item>MsmeSub4</item>
+        <item>MsmeSub5</item>
+        <item>MsmeSub6</item>
+    </string-array>
+    <string-array name="MsmeSem3">
+        <item>MsmeSub1</item>
+        <item>MsmeSub2</item>
+        <item>MsmeSub3</item>
+        <item>MsmeSub4</item>
+        <item>MsmeSub5</item>
+        <item>MsmeSub6</item>
+    </string-array>
+    <string-array name="MsmeSem4">
+        <item>MsmeSub1</item>
+        <item>MsmeSub2</item>
+        <item>MsmeSub3</item>
+        <item>MsmeSub4</item>
+        <item>MsmeSub5</item>
+        <item>MsmeSub6</item>
+    </string-array>
+    <string-array name="MsmeSem5">
+        <item>MsmeSub1</item>
+        <item>MsmeSub2</item>
+        <item>MsmeSub3</item>
+        <item>MsmeSub4</item>
+        <item>MsmeSub5</item>
+        <item>MsmeSub6</item>
+    </string-array>
+    <string-array name="MsmeSem6">
+        <item>MsmeSub1</item>
+        <item>MsmeSub2</item>
+        <item>MsmeSub3</item>
+        <item>MsmeSub4</item>
+        <item>MsmeSub5</item>
+        <item>MsmeSub6</item>
+    </string-array>
+    <string-array name="MsmeSem7">
+        <item>MsmeSub1</item>
+        <item>MsmeSub2</item>
+        <item>MsmeSub3</item>
+        <item>MsmeSub4</item>
+        <item>MsmeSub5</item>
+        <item>MsmeSub6</item>
+    </string-array>
+    <string-array name="MsmeSem8">
+        <item>MsmeSub1</item>
+        <item>MsmeSub2</item>
+        <item>MsmeSub3</item>
+        <item>MsmeSub4</item>
+        <item>MsmeSub5</item>
+        <item>MsmeSub6</item>
+    </string-array>
+
+    <string-array name="EceSection">
+        <item>Ece1</item>
+        <item>Ece2</item>
+        <item>Ece3</item>
+    </string-array>
+    <string-array name="EceSem1">
+        <item>EceSub1</item>
+        <item>EceSub2</item>
+        <item>EceSub3</item>
+        <item>EceSub4</item>
+        <item>EceSub5</item>
+        <item>EceSub6</item>
+    </string-array>
+    <string-array name="EceSem2">
+        <item>EceSub1</item>
+        <item>EceSub2</item>
+        <item>EceSub3</item>
+        <item>EceSub4</item>
+        <item>EceSub5</item>
+        <item>EceSub6</item>
+    </string-array>
+    <string-array name="EceSem3">
+        <item>EceSub1</item>
+        <item>EceSub2</item>
+        <item>EceSub3</item>
+        <item>EceSub4</item>
+        <item>EceSub5</item>
+        <item>EceSub6</item>
+    </string-array>
+    <string-array name="EceSem4">
+        <item>EceSub1</item>
+        <item>EceSub2</item>
+        <item>EceSub3</item>
+        <item>EceSub4</item>
+        <item>EceSub5</item>
+        <item>EceSub6</item>
+    </string-array>
+    <string-array name="EceSem5">
+        <item>EceSub1</item>
+        <item>EceSub2</item>
+        <item>EceSub3</item>
+        <item>EceSub4</item>
+        <item>EceSub5</item>
+        <item>EceSub6</item>
+    </string-array>
+    <string-array name="EceSem6">
+        <item>EceSub1</item>
+        <item>EceSub2</item>
+        <item>EceSub3</item>
+        <item>EceSub4</item>
+        <item>EceSub5</item>
+        <item>EceSub6</item>
+    </string-array>
+    <string-array name="EceSem7">
+        <item>EceSub1</item>
+        <item>EceSub2</item>
+        <item>EceSub3</item>
+        <item>EceSub4</item>
+        <item>EceSub5</item>
+        <item>EceSub6</item>
+    </string-array>
+    <string-array name="EceSem8">
+        <item>EceSub1</item>
+        <item>EceSub2</item>
+        <item>EceSub3</item>
+        <item>EceSub4</item>
+        <item>EceSub5</item>
+        <item>EceSub6</item>
+    </string-array>
+
+    <string-array name="ExSection">
+        <item>Ex1</item>
+        <item>Ex2</item>
+        <item>Ex3</item>
+    </string-array>
+    <string-array name="ExSem1">
+        <item>ExSub1</item>
+        <item>ExSub2</item>
+        <item>ExSub3</item>
+        <item>ExSub4</item>
+        <item>ExSub5</item>
+        <item>ExSub6</item>
+    </string-array>
+    <string-array name="ExSem2">
+        <item>ExSub1</item>
+        <item>ExSub2</item>
+        <item>ExSub3</item>
+        <item>ExSub4</item>
+        <item>ExSub5</item>
+        <item>ExSub6</item>
+    </string-array>
+    <string-array name="ExSem3">
+        <item>ExSub1</item>
+        <item>ExSub2</item>
+        <item>ExSub3</item>
+        <item>ExSub4</item>
+        <item>ExSub5</item>
+        <item>ExSub6</item>
+    </string-array>
+    <string-array name="ExSem4">
+        <item>ExSub1</item>
+        <item>ExSub2</item>
+        <item>ExSub3</item>
+        <item>ExSub4</item>
+        <item>ExSub5</item>
+        <item>ExSub6</item>
+    </string-array>
+    <string-array name="ExSem5">
+        <item>ExSub1</item>
+        <item>ExSub2</item>
+        <item>ExSub3</item>
+        <item>ExSub4</item>
+        <item>ExSub5</item>
+        <item>ExSub6</item>
+    </string-array>
+    <string-array name="ExSem6">
+        <item>ExSub1</item>
+        <item>ExSub2</item>
+        <item>ExSub3</item>
+        <item>ExSub4</item>
+        <item>ExSub5</item>
+        <item>ExSub6</item>
+    </string-array>
+    <string-array name="ExSem7">
+        <item>ExSub1</item>
+        <item>ExSub2</item>
+        <item>ExSub3</item>
+        <item>ExSub4</item>
+        <item>ExSub5</item>
+        <item>ExSub6</item>
+    </string-array>
+    <string-array name="ExSem8">
+        <item>ExSub1</item>
+        <item>ExSub2</item>
+        <item>ExSub3</item>
+        <item>ExSub4</item>
+        <item>ExSub5</item>
+        <item>ExSub6</item>
+    </string-array>
+
+    <string-array name="CivilSection">
+        <item>Civil1</item>
+        <item>Civil2</item>
+        <item>Civil3</item>
+    </string-array>
+    <string-array name="CivilSem1">
+        <item>CivilSub1</item>
+        <item>CivilSub2</item>
+        <item>CivilSub3</item>
+        <item>CivilSub4</item>
+        <item>CivilSub5</item>
+        <item>CivilSub6</item>
+    </string-array>
+    <string-array name="CivilSem2">
+        <item>CivilSub1</item>
+        <item>CivilSub2</item>
+        <item>CivilSub3</item>
+        <item>CivilSub4</item>
+        <item>CivilSub5</item>
+        <item>CivilSub6</item>
+    </string-array>
+    <string-array name="CivilSem3">
+        <item>CivilSub1</item>
+        <item>CivilSub2</item>
+        <item>CivilSub3</item>
+        <item>CivilSub4</item>
+        <item>CivilSub5</item>
+        <item>CivilSub6</item>
+    </string-array>
+    <string-array name="CivilSem4">
+        <item>CivilSub1</item>
+        <item>CivilSub2</item>
+        <item>CivilSub3</item>
+        <item>CivilSub4</item>
+        <item>CivilSub5</item>
+        <item>CivilSub6</item>
+    </string-array>
+    <string-array name="CivilSem5">
+        <item>CivilSub1</item>
+        <item>CivilSub2</item>
+        <item>CivilSub3</item>
+        <item>CivilSub4</item>
+        <item>CivilSub5</item>
+        <item>CivilSub6</item>
+    </string-array>
+    <string-array name="CivilSem6">
+        <item>CivilSub1</item>
+        <item>CivilSub2</item>
+        <item>CivilSub3</item>
+        <item>CivilSub4</item>
+        <item>CivilSub5</item>
+        <item>CivilSub6</item>
+    </string-array>
+    <string-array name="CivilSem7">
+        <item>CivilSub1</item>
+        <item>CivilSub2</item>
+        <item>CivilSub3</item>
+        <item>CivilSub4</item>
+        <item>CivilSub5</item>
+        <item>CivilSub6</item>
+    </string-array>
+    <string-array name="CivilSem8">
+        <item>CivilSub1</item>
+        <item>CivilSub2</item>
+        <item>CivilSub3</item>
+        <item>CivilSub4</item>
+        <item>CivilSub5</item>
+        <item>CivilSub6</item>
+    </string-array>
+
+    <string-array name="ChemSection">
+        <item>Chem1</item>
+        <item>Chem2</item>
+        <item>Chem3</item>
+    </string-array>
+    <string-array name="ChemSem1">
+        <item>ChemSub1</item>
+        <item>ChemSub2</item>
+        <item>ChemSub3</item>
+        <item>ChemSub4</item>
+        <item>ChemSub5</item>
+        <item>ChemSub6</item>
+    </string-array>
+    <string-array name="ChemSem2">
+        <item>ChemSub1</item>
+        <item>ChemSub2</item>
+        <item>ChemSub3</item>
+        <item>ChemSub4</item>
+        <item>ChemSub5</item>
+        <item>ChemSub6</item>
+    </string-array>
+    <string-array name="ChemSem3">
+        <item>ChemSub1</item>
+        <item>ChemSub2</item>
+        <item>ChemSub3</item>
+        <item>ChemSub4</item>
+        <item>ChemSub5</item>
+        <item>ChemSub6</item>
+    </string-array>
+    <string-array name="ChemSem4">
+        <item>ChemSub1</item>
+        <item>ChemSub2</item>
+        <item>ChemSub3</item>
+        <item>ChemSub4</item>
+        <item>ChemSub5</item>
+        <item>ChemSub6</item>
+    </string-array>
+    <string-array name="ChemSem5">
+        <item>ChemSub1</item>
+        <item>ChemSub2</item>
+        <item>ChemSub3</item>
+        <item>ChemSub4</item>
+        <item>ChemSub5</item>
+        <item>ChemSub6</item>
+    </string-array>
+    <string-array name="ChemSem6">
+        <item>ChemSub1</item>
+        <item>ChemSub2</item>
+        <item>ChemSub3</item>
+        <item>ChemSub4</item>
+        <item>ChemSub5</item>
+        <item>ChemSub6</item>
+    </string-array>
+    <string-array name="ChemSem7">
+        <item>ChemSub1</item>
+        <item>ChemSub2</item>
+        <item>ChemSub3</item>
+        <item>ChemSub4</item>
+        <item>ChemSub5</item>
+        <item>ChemSub6</item>
+    </string-array>
+    <string-array name="ChemSem8">
+        <item>ChemSub1</item>
+        <item>ChemSub2</item>
+        <item>ChemSub3</item>
+        <item>ChemSub4</item>
+        <item>ChemSub5</item>
+        <item>ChemSub6</item>
+    </string-array>
+
+
+
+
+    ////       --------------------------SCHEDULE ------------------------------------- ////////////
+
+
+    <string name="main_activity">Timetable</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="dialogDeleted">Deleted</string>
+    <string name="menuSettings">Settings</string>
+    <string name="menuAddCourse">Add</string>
+    <string name="traffic_schoolMap">Map</string>
+    <string name="settings_timetableTitle">Table Name</string>
+    <string name="settings_timetableTitleDefaultValue">My Timetable</string>
+    <string name="settings_timetableTitleSummary">Name to show on the main screen</string>
+    <string name="settings_contactSummary">Bug Report or feature request.</string>
+    <string name="settings_contactTitle">Contact Developers</string>
+    <string name="settings_sectionGeneral">General</string>
+    <string name="settings_campusMapPickerTitle">Campus Map</string>
+    <string name="settings_campusMapPickerSummary">Support image and PDF</string>
+    <string name="all_save">Save</string>
+    <string name="mapImageNotSetMessage">
+        1. Go to \"Settings\".
+        \n2. Click on \"Campus Map\".
+        \n3. Select your image.</string>
+    <string name="menuMap">Map</string>
+    <string name="menuCalendar">Calendar</string>
+    <string name="settings_schoolCalendarPickerTitle">Calendar</string>
+    <string name="settings_schoolCalendarPickerSummary">Support PDF</string>
+    <string name="pdfNoAppMsg">Install Google Drive first</string>
+    <string name="pdfOpenWithMsg">Open PDF with…</string>
+    <string name="dialogNegativeButton">Hell No</string>
+    <string name="dialogPositiveButton">Of Course</string>
+    <string name="dialogConfirmExit">Are you sure you want to EXIT?</string>
+    <string name="dialogConfirmDelete">Are you sure you want to DELETE it?</string>
+    <string name="fileReadErrorMsg">Unknown error, please try again.</string>
+    <string name="pdfFileNotFound">PDF not found, does it still there?</string>
+    <string name="settings_sectionMapCalendar">Map and Calendar</string>
+    <string name="settings_mapCalendarHelperTitle">What are these?</string>
+    <string name="settings_mapCalendarHelperMessage">
+        1. These two are the shortcuts of the map/calendar, they can be accessed from the main screen.
+        \n\n2. DO NOT delete/move/rename the file, that will invalid the shortcuts.
+        \n\n3. If the size of the photo is too large can cause crashes when opening the map, consider making it smaller.
+        \n\nMap: JPG, PNG and PDF\nCalendar: PDF
+    </string>
+    <string name="courseEditorActivityTitle">Course Editor</string>
+    <string name="courseEditor_titleAdd">Add Course</string>
+    <string name="courseEditor_titleEdit">Edit Details</string>
+    <string name="courseEditor_courseNameTitle">Name</string>
+    <string name="courseEditor_courseNameEntry">Intro to Computer Science</string>
+    <string name="courseEditor_courseBeginTitle">Begin</string>
+    <string name="courseEditor_courseEndTitle">End</string>
+    <string name="courseEditor_courseBeginEntry">00:00</string>
+    <string name="courseEditor_courseEndEntry">00:00</string>
+    <string name="courseEditor_exitConfirmDialogTitle">Confirm EXIT</string>
+    <string name="courseEditor_exitConfirmDialogMsg">The information you just entered will not be SAVED !</string>
+    <string name="all_cancel">Cancel</string>
+    <string name="all_confirm">Confirm</string>
+    <string name="all_ohIsError">Something went wrong…</string>
+    <string name="settings_weekdayLengthLongSummary">e.g. Monday</string>
+    <string name="settings_weekendColTitle">Enable Weekend</string>
+    <string name="settings_weekendColSummary">Show Saturday and Sunday</string>
+    <string name="settings_themeTitle">Theme</string>
+    <string name="settings_sectionTimetable">Timetable</string>
+    <string name="settings_notificationBeforeClassTitle">Noti Before Class (Under Dev)</string>
+    <string name="settings_notificationBeforeClassSummary">Send notification before class</string>
+    <string name="settings_weekdayLengthLongTitle">Show Full Weekday Name</string>
+    <string name="courseEditor_coursePlaceTitle">Location</string>
+    <string name="courseEditor_courseWeekdayTitle">Day</string>
+    <string name="courseEditor_coursePlaceEntry">Surrey Campus</string>
+    <string name="courseEditor_noEntry">Required</string>
+    <string name="courseCardDialog_editCourseInfo">Edit</string>
+    <string name="courseCardDialog_deleteCourse">Delete</string>
+    <string name="courseCardDialog_message">New semester?\nEdit it instead of deleting it!</string>
+    <string name="courseCardDialog_title">You want … ?</string>
+    <string name="prefAbout_versionTitle">Version</string>
+    <string name="prefAbout_changelogTitle">Changelog</string>
+    <string name="prefAbout_openSourceTitle">Open Source Library</string>
+    <string name="courseEditor_courseProfTitle">Prof. (Optional)</string>
+    <string name="courseViewer_iconZzzDescription">sleep icon</string>
+    <string name="courseViewer_noClassToday">No class today</string>
+    <string name="widget_stillInBetaMessage">The widget is still in beta</string>
+    <string name="widget_noClassToday">No class today.</string>
+    <string name="settings_sectionOther">Others</string>
+    <string name="settings_aboutTitle">About</string>
+    <string name="settings_aboutSummary">Made with ❤</string>
+    <string name="mapImageNotSetIconContentDescription">A magnifying glass icon with a huge x</string>
+    <string name="mapImageNotSetTitle">File not set or not found</string>
+    <string name="prefAbout_termsOfService">Terms of service</string>
+    <string name="prefAbout_privacyPolicy">Privacy Policy</string>
+    <string name="prefAbout_license">License</string>
+    <string name="settings_fabActionTitle">FAB action</string>
+    <string name="settings_campusMapPickerDialogTitle">Select file type</string>
+////       --------------------------SCHEDULE END  ------------------------------------- ////////////
+
+</resources>

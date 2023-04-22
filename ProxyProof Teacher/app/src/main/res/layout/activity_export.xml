@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pagebg"
+
+    android:padding="20dp">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportXLS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Export\nAttendance"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open\nFile"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEnterDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20sp"
+        android:background="@drawable/drawablebackground"
+        android:elevation="5dp"
+        android:paddingHorizontal="10sp"
+        android:text="Attendance Details"
+        android:textAlignment="center"
+        android:textColor="#673AB7"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawablebackground"
+        android:elevation="5dp"
+        android:padding="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnExportXLS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnterDetails"
+        app:layout_constraintWidth_percent="0.9">
+
+        <TextView
+            android:id="@+id/tvDept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Department"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/clBox" />
+
+        <Spinner
+            android:id="@+id/spDept"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/white"
+            android:hint="Department"
+            android:spinnerMode="dropdown"
+            android:textSize="20sp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/tvDept"
+            app:layout_constraintStart_toEndOf="@+id/tvDept"
+            app:layout_constraintTop_toTopOf="@+id/tvDept"
+            app:layout_constraintWidth_percent=".30" />
+
+        <TextView
+            android:id="@+id/tvSem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Semester"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDept" />
+
+        <Spinner
+            android:id="@+id/spSem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/white"
+            android:hint="Semester"
+            android:spinnerMode="dropdown"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSem"
+            app:layout_constraintStart_toEndOf="@+id/tvDept"
+            app:layout_constraintTop_toTopOf="@+id/tvSem"
+            app:layout_constraintVertical_bias="0.481"
+            app:layout_constraintWidth_percent=".30" />
+
+        <TextView
+            android:id="@+id/tvClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Class"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSem" />
+
+        <Spinner
+            android:id="@+id/spClass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@color/white"
+            android:hint="Subject/Code"
+            android:spinnerMode="dropdown"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvClass"
+            app:layout_constraintStart_toEndOf="@+id/tvDept"
+            app:layout_constraintTop_toTopOf="@+id/tvClass"
+            app:layout_constraintWidth_percent=".30" />
+
+        <TextView
+            android:id="@+id/tvSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Subject"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClass" />
+
+        <Spinner
+            android:id="@+id/spSubject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@color/white"
+            android:hint="Subject/Code"
+            android:spinnerMode="dropdown"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSubject"
+            app:layout_constraintStart_toEndOf="@+id/tvDept"
+            app:layout_constraintTop_toTopOf="@+id/tvSubject"
+            app:layout_constraintWidth_percent=".30" />
+
+        <TextView
+            android:id="@+id/tvTimeSlot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="TimeSlot"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubject" />
+
+        <Spinner
+            android:id="@+id/spTimeSlot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@color/white"
+            android:hint="Subject/Code"
+            android:spinnerMode="dropdown"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTimeSlot"
+            app:layout_constraintStart_toEndOf="@+id/tvDept"
+            app:layout_constraintTop_toTopOf="@+id/tvTimeSlot"
+            app:layout_constraintWidth_percent=".30" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddDepart"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:background="@drawable/ic_add_box_24"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/spDept"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/spDept"
+            app:layout_constraintTop_toTopOf="@+id/spDept"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddSem"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:background="@drawable/ic_add_box_24"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/spSem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/spSem"
+            app:layout_constraintTop_toTopOf="@+id/spSem" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddSec"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:background="@drawable/ic_add_box_24"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/spClass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/spClass"
+            app:layout_constraintTop_toTopOf="@+id/spClass"  />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddSub"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:background="@drawable/ic_add_box_24"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/spSubject"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/spSubject"
+            app:layout_constraintTop_toTopOf="@+id/spSubject"  />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddTime"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:background="@drawable/ic_add_box_24"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/spTimeSlot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/spTimeSlot"
+            app:layout_constraintTop_toTopOf="@+id/spTimeSlot"  />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="?android:attr/actionModeFindDrawable"
+        android:tooltipText="Sync"
+        android:visibility="visible"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="?attr/colorOnPrimary" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_exit_24dp"
+        android:tooltipText="Back"
+        app:borderWidth="0dp"
+        app:tint="?attr/colorOnPrimary"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

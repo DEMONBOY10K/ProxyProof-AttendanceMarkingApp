@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/tvItems"
+style="?attr/spinnerDropDownItemStyle"
+android:singleLine="true"
+android:textStyle="bold"
+android:padding="10dp"
+android:textColor="@color/black"
+android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+android:ellipsize="marquee"/>
+
+<!--    android:layout_height="?attr/dropdownListPreferredItemHeight"-->

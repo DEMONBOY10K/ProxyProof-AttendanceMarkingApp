@@ -1,0 +1,159 @@
+package com.mact.proxyproof.sender
+
+import android.app.Application
+import android.content.Context
+import android.net.Uri
+import android.util.Log
+import androidx.core.net.toFile
+import androidx.documentfile.provider.DocumentFile
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
+import github.leavesczy.wififiletransfer.Constants
+import com.mact.proxyproof.models.FileTransfer
+import com.mact.proxyproof.models.ViewState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.ObjectOutputStream
+import java.io.OutputStream
+import java.net.InetSocketAddress
+import java.net.Socket
+
+
+class FileSenderViewModel(context: Application) :
+    AndroidViewModel(context) {
+
+    private val _viewState = MutableSharedFlow<ViewState>()
+
+    val viewState: SharedFlow<ViewState> = _viewState
+
+    private val _log = MutableSharedFlow<String>()
+
+    val log: SharedFlow<String> = _log
+
+    private var job: Job? = null
+
+    fun send(ipAddress: String, fileUri: Uri,scholar:String) {
+        if (job != null) {
+            return
+        }
+
+        job = viewModelScope.launch {
+            withContext(context = Dispatchers.IO) {
+                _viewState.emit(value = ViewState.Idle)
+
+                var socket: Socket? = null
+                var outputStream: OutputStream? = null
+                var objectOutputStream: ObjectOutputStream? = null
+                var fileInputStream: FileInputStream? = null
+
+                try {
+
+                    val cacheFile =
+                        saveFileToCacheDir(context = getApplication(), fileUri = fileUri,scholar)
+                    val fileTransfer = FileTransfer(fileName = cacheFile.name)
+                    Log.d("_log",cacheFile.name)
+                    _viewState.emit(value = ViewState.Connecting)
+//                    _log.emit(value = "file to send: $fileTransfer")
+                    Log.d("_log", _log.subscriptionCount.value.toString())
+//                    _log.emit(value = "turn on Socket")
+
+//                    Log.d("_log", _log.subscriptionCount.value.toString())
+
+                    socket = Socket()
+                    socket.bind(null)
+
+//                    _log.emit(value = "socket connect，Give up if the connection is not successful within 30 seconds")
+
+                    socket.connect(InetSocketAddress(ipAddress, Constants.PORT), 30000)
+
+                    _viewState.emit(value = ViewState.Receiving)
+//                    _log.emit(value = "connection succeeded，start file transfer")
+
+                    outputStream = socket.getOutputStream()
+                    objectOutputStream = ObjectOutputStream(outputStream)
+                    objectOutputStream.writeObject(fileTransfer)
+                    fileInputStream = FileInputStream(cacheFile)
+                    val buffer = ByteArray(1024 * 512)
+                    var length: Int
+                    while (true) {
+                        length = fileInputStream.read(buffer)
+                        if (length > 0) {
+                            outputStream.write(buffer, 0, length)
+                        } else {
+                            break
+                        }
+//                        _log.emit(value = "transferring file, length : $length")
+                    }
+                    _log.emit(value = "File sent successfully")
+                    _viewState.emit(value = ViewState.Success(file = cacheFile))
+                } catch (e: Throwable) {
+                    e.printStackTrace()
+                    _log.emit(value = "Error: " + e.message)
+                    _viewState.emit(value = ViewState.Failed(throwable = e))
+                } finally {
+                    fileInputStream?.close()
+                    outputStream?.close()
+                    objectOutputStream?.close()
+                    socket?.close()
+                }
+            }
+        }
+        job?.invokeOnCompletion {
+            job = null
+        }
+    }
+
+    private suspend fun saveFileToCacheDir(context: Context, fileUri: Uri,scholar:String): File {
+        return withContext(context = Dispatchers.IO) {
+            Log.d("_log",fileUri.toString())
+            val documentFile = DocumentFile.fromSingleUri(context, fileUri)
+                ?: throw NullPointerException("fileName for given input Uri is null")
+//            val fileName = documentFile.name
+            val fileName = "$scholar.txt"
+
+//            val outputFile = File(
+//                context.cacheDir, (Random.nextInt(
+//                    1,200
+//                ).toString() + "_" + fileName)
+//            )
+            val outputFile = File(
+                context.cacheDir,fileName
+            )
+            if (outputFile.exists()) {
+                outputFile.delete()
+            }
+            outputFile.createNewFile()
+            val outputFileUri = Uri.fromFile(outputFile)
+            copyFile(context, fileUri, outputFileUri)
+            return@withContext outputFile
+        }
+    }
+
+    private suspend fun copyFile(context: Context, inputUri: Uri, outputUri: Uri) {
+        withContext(context = Dispatchers.IO) {
+            val inputStream = context.contentResolver.openInputStream(inputUri)
+                ?: throw NullPointerException("InputStream for given input Uri is null")
+            val outputStream = FileOutputStream(outputUri.toFile())
+            val buffer = ByteArray(1024)
+            var length: Int
+            while (true) {
+                length = inputStream.read(buffer)
+                if (length > 0) {
+                    outputStream.write(buffer, 0, length)
+                } else {
+                    break
+                }
+            }
+            inputStream.close()
+            outputStream.close()
+        }
+    }
+
+}

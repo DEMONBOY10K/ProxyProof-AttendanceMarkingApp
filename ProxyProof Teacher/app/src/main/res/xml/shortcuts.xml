@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_map"
+        android:shortcutDisabledMessage="@string/traffic_schoolMap"
+        android:shortcutId="compose"
+        android:shortcutLongLabel="@string/menuMap"
+        android:shortcutShortLabel="@string/menuMap">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="timetable://open_maps_viewer"
+            android:targetClass="com.mact.proxyproof.schedule.ScheduleActivity"
+            android:targetPackage="com.mact.proxyproof.schedule" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>

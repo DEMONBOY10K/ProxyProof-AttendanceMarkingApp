@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  a:layout_width="match_parent"
+  a:layout_height="match_parent"
+    a:background="@color/colorGrey"
+  a:orientation="vertical"
+  a:theme="@style/Theme.Material">
+
+  <Button
+    a:id="@+id/open_list_open"
+
+    a:layout_width="match_parent"
+    a:layout_height="wrap_content"
+    a:background="@color/white"
+      a:textColor="@color/black"
+      a:layout_margin="5sp"
+    a:text="Open"
+    a:textSize="20sp"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    a:id="@+id/open_list_share"
+      a:textColor="@color/black"
+    a:layout_width="match_parent"
+      a:layout_margin="5sp"
+    a:layout_height="wrap_content"
+    a:background="@color/white"
+    a:text="Share"
+    a:textSize="20sp"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    a:id="@+id/open_list_cancel"
+      a:textColor="@color/black"
+    a:layout_width="match_parent"
+    a:layout_height="wrap_content"
+    a:background="@color/white"
+      a:layout_margin="5sp"
+    a:text="Cancel"
+    a:textSize="20sp"
+    tools:ignore="HardcodedText" />
+
+</LinearLayout>

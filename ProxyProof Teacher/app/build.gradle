@@ -1,0 +1,154 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.google.gms.google-services'
+}
+apply plugin: 'com.mikepenz.aboutlibraries.plugin'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.mact.proxyproof"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    aaptOptions {
+        noCompress "tflite"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    apply plugin : "kotlin-android"
+    apply plugin : "kotlin-android-extensions"
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "androidx.core:core-ktx:1.9.0"
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+//    //Regula Huawei  Face Api
+//    implementation ('com.regula.face:api:4.1.+@aar'){
+//        transitive = true
+//    }
+////     include this library only if you want to support Huawei devices which does not have Google Mobile Services
+//    implementation ('com.regula.face:huawei-vision:4.1.+@aar'){
+//        transitive = true
+//    }
+
+//    implementation 'com.google.android.gms:play-services:12.0.1'
+    //    Google Vision API
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+
+    //    collect permission on runtime
+//    implementation 'com.karumi:dexter:4.2.0'
+
+    //lottie Animations
+    implementation "com.airbnb.android:lottie:3.4.0"
+
+    //<firebase>
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation platform('com.google.firebase:firebase-bom:29.3.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
+    //</firebase>
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+    implementation 'org.apache.commons:commons-io:1.3.2'
+    implementation 'org.apache.poi:poi:3.17'
+
+    implementation 'io.coil-kt:coil:2.2.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'androidx.activity:activity-ktx:1.6.1'
+
+//    //ML Kit (To detect faces)
+//    implementation 'com.google.mlkit:face-detection:16.1.5'
+//    implementation 'com.google.android.gms:play-services-mlkit-face-detection:17.1.0'
+//
+//    //GSON (Conversion of String to Map & Vice-Versa)
+//    implementation 'com.google.code.gson:gson:2.9.0'
+//
+////    // CameraX View class (For camera preview)
+//    implementation "androidx.camera:camera-core:1.3.0-alpha04"
+//    implementation "androidx.camera:camera-camera2:1.3.0-alpha04"
+//    implementation "androidx.camera:camera-lifecycle:1.3.0-alpha04"
+//    implementation "androidx.camera:camera-view:1.3.0-alpha04"
+//
+//    //TensorFlow Lite libraries (To recognize faces)
+//    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.3.0'
+//    implementation 'org.tensorflow:tensorflow-lite-support:0.3.0'
+//    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly-SNAPSHOT'
+    // Color picking
+    implementation 'petrov.kristiyan:colorpicker-library:1.1.10'
+    implementation "com.github.skydoves:colorpickerview:2.2.0"
+
+
+
+    implementation 'androidx.browser:browser:1.0.0'
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation "androidx.fragment:fragment-ktx:1.5.4"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+
+//    implementation 'com.github.MikeOrtiz:TouchImageView:3.0.1'
+    implementation "com.mikepenz:aboutlibraries:${latestAboutLibsRelease}"
+    implementation "com.mikepenz:aboutlibraries-core:${latestAboutLibsRelease}"
+
+    annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
+
+}
+

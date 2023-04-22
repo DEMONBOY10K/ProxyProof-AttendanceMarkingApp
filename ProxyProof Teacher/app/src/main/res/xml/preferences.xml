@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/settings_sectionGeneral">
+
+        <EditTextPreference
+            android:defaultValue="@string/settings_timetableTitleDefaultValue"
+            android:icon="@drawable/ic_label_outline_24dp"
+            android:key="tableTitle_Pref"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/settings_timetableTitle"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/prefThemeEntries"
+            android:entryValues="@array/prefThemeEntriesValues"
+            android:icon="@drawable/ic_outline_format_paint_24"
+            android:key="pref_theme"
+            android:summary="%s"
+            android:title="@string/settings_themeTitle" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/settings_fabActionEntries"
+            android:entryValues="@array/settings_fabActionEntriesValues"
+            android:key="pref_fabAction"
+            android:summary="%s"
+            android:title="@string/settings_fabActionTitle" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_sectionMapCalendar">
+
+        <Preference
+            android:icon="@drawable/ic_map_24dp"
+            android:key="pref_campusMapPicker"
+            android:summary="@string/settings_campusMapPickerSummary"
+            android:title="@string/settings_campusMapPickerTitle" />
+
+        <Preference
+            android:icon="@drawable/ic_event_note_24dp"
+            android:key="pref_schoolCalendarPicker"
+            android:summary="@string/settings_schoolCalendarPickerSummary"
+            android:title="@string/settings_schoolCalendarPickerTitle" />
+
+        <Preference
+            android:icon="@drawable/ic_help_outline_24dp"
+            android:key="pref_mapCalHelper"
+            android:title="@string/settings_mapCalendarHelperTitle" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_sectionTimetable">
+
+        <ListPreference
+            android:enabled="false"
+            android:icon="@drawable/ic_outline_notifications_active_24"
+            android:key="pref_notificationBeforeClass"
+            android:title="@string/settings_notificationBeforeClassTitle" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_weekendCol"
+            android:summary="@string/settings_weekendColSummary"
+            android:title="@string/settings_weekendColTitle" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_weekdayLengthLong"
+            android:summary="@string/settings_weekdayLengthLongSummary"
+            android:title="@string/settings_weekdayLengthLongTitle" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_sectionOther">
+
+        <Preference
+            android:icon="@drawable/ic_bug_24dp"
+            android:key="pref_bugReport"
+            android:summary="@string/settings_contactSummary"
+            android:title="@string/settings_contactTitle" />
+
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:key="pref_gotoAboutPage"
+            android:summary="@string/settings_aboutSummary"
+            android:title="@string/settings_aboutTitle"
+            app:fragment="com.txwstudio.app.timetable.ui.preferences.PreferencesAboutFragment" />
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "113485135129",
+    "firebase_url": "https://proxyproof-10000-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "proxyproof-10000",
+    "storage_bucket": "proxyproof-10000.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113485135129:android:621ae912bea19c957d9988",
+        "android_client_info": {
+          "package_name": "com.mact.proxyproof"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113485135129-j59qkcgkfbtamjttr7dguke61g12m6na.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV7SkLXcN4BzNryfG1saqLb8jjPmN8Umc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113485135129-j59qkcgkfbtamjttr7dguke61g12m6na.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

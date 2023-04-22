@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:key="prefAbout_version"
+        android:title="@string/prefAbout_versionTitle"
+        app:iconSpaceReserved="false" />
+
+    <Preference
+        android:key="prefAbout_changelog"
+        android:title="@string/prefAbout_changelogTitle"
+        app:iconSpaceReserved="false"
+        app:isPreferenceVisible="false" />
+
+    <Preference
+        android:key="prefAbout_openSource"
+        android:title="@string/prefAbout_openSourceTitle"
+        app:iconSpaceReserved="false" />
+
+    <Preference
+        android:key="prefAbout_termsOfService"
+        android:title="@string/prefAbout_termsOfService"
+        app:iconSpaceReserved="false"
+        app:isPreferenceVisible="false" />
+
+    <Preference
+        android:key="prefAbout_privacyPolicy"
+        android:title="@string/prefAbout_privacyPolicy"
+        app:iconSpaceReserved="false"
+        app:isPreferenceVisible="false" />
+
+    <Preference
+        android:key="prefAbout_license"
+        android:title="@string/prefAbout_license"
+        app:iconSpaceReserved="false"
+        app:isPreferenceVisible="false" />
+</PreferenceScreen>
